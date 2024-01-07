@@ -64,7 +64,6 @@ class _ReportViewState extends State<ReportView> {
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.12,
                             child: Image.asset(AppStyle.heartBeat)),
-                        
                       ],
                     ),
                   ],
