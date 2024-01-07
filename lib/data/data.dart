@@ -64,3 +64,35 @@ List<Appointments> upcomingAppointmentsList = [
     color: const Color(0xff1C6BA4),
   ),
 ];
+
+/// Profile Data
+class ProfileData {
+  IconData icon;
+  String name;
+  void Function() onTap;
+
+  ProfileData({
+    required this.name,
+    required this.icon,
+    required this.onTap,
+  });
+}
+
+List<ProfileData> profile = [
+  ProfileData(name: 'Edit Profile', icon: Icons.person_pin, onTap: () {}),
+  ProfileData(
+      name: 'Favorite', icon: Icons.favorite_border_outlined, onTap: () {}),
+  ProfileData(
+      name: 'Notifications',
+      icon: Icons.notifications_none_outlined,
+      onTap: () {}),
+  ProfileData(name: 'Settings', icon: Icons.settings_outlined, onTap: () {}),
+  ProfileData(
+      name: 'Help and Support',
+      icon: Icons.help_outline_outlined,
+      onTap: () {}),
+  ProfileData(
+      name: 'Terms and Conditions',
+      icon: Icons.description_outlined,
+      onTap: () {}),
+];
