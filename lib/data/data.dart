@@ -52,15 +52,15 @@ List<Appointments> upcomingAppointmentsList = [
   Appointments(
     date: "12\nTue",
     time: DateFormat('hh:mm a').format(DateTime.now()),
-    title: "Dr. Mim Akhter",
-    subTitle: "Depression",
+    title: "Dr. John Richard",
+    subTitle: "Brain Specialist",
     color: const Color(0xff1C6BA4),
   ),
   Appointments(
-    date: "12\nTue",
+    date: "30\nFri",
     time: DateFormat('hh:mm a').format(DateTime.now()),
-    title: "Dr. Mim Akhter",
-    subTitle: "Depression",
+    title: "Dr. Sarah Ahmed",
+    subTitle: "Cardiologist",
     color: const Color(0xff1C6BA4),
   ),
 ];

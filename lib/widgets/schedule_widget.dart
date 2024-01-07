@@ -47,18 +47,19 @@ class ScheduledWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 22),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           item['time'],
                           style: GoogleFonts.poppins(fontSize: 16),
                         ),
+                        const SizedBox(width: 20),
+                        CustomPaint(
+                          size: const Size(350, 0),
+                          painter: DottedLinePainter(),
+                        ),
                       ],
                     ),
-                  ),
-                  CustomPaint(
-                    size: const Size(250, 0),
-                    painter: DottedLinePainter(),
                   ),
                   const SizedBox(height: 10),
                   Container(
@@ -75,7 +76,7 @@ class ScheduledWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 height: 100,
@@ -125,7 +126,7 @@ class ScheduledWidget extends StatelessWidget {
                               ),
                               const Spacer(),
                               Icon(
-                                Icons.more_horiz,
+                                Icons.more_vert,
                                 color: index == 0 ? Colors.white : Colors.black,
                               )
                             ],

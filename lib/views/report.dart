@@ -63,7 +63,8 @@ class _ReportViewState extends State<ReportView> {
                         const SizedBox(width: 40),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.12,
-                            child: Image.asset(AppStyle.heartBeat))
+                            child: Image.asset(AppStyle.heartBeat)),
+                        
                       ],
                     ),
                   ],
@@ -98,7 +99,7 @@ class _ReportViewState extends State<ReportView> {
             FadeInLeft(
               delay: const Duration(milliseconds: 1100),
               child: Text(
-                "Test Report",
+                "Test Reports",
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!
@@ -152,7 +153,7 @@ class BodyMassWidget extends StatelessWidget {
                 img,
                 height: 30,
               ),
-              const Icon(Icons.more_horiz),
+              const Icon(Icons.more_vert),
             ],
           ),
           const SizedBox(height: 15),

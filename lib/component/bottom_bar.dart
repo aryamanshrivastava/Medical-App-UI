@@ -74,15 +74,13 @@ class _BottomBarState extends State<BottomBar> {
             label: 'Report',
           ),
           BottomNavigationBarItem(
-            activeIcon: SvgPicture.asset(
-              AppStyle.notificationsIcon,
-              colorFilter: const ColorFilter.mode(
-                AppStyle.primarySwatch,
-                BlendMode.srcIn,
-              ),
+            activeIcon: Icon(
+              size: 25,
+              Icons.person,
+              color: AppStyle.primarySwatch,
             ),
-            icon: SvgPicture.asset(AppStyle.notificationsIcon),
-            label: 'Notifications',
+            icon: Icon(Icons.person, size: 25),
+            label: 'Account',
           ),
         ],
         currentIndex: selectedIndex,

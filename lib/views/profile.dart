@@ -20,88 +20,70 @@ class _ProfileViewState extends State<ProfileView> {
     double w = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'Profile',
-            style: TextStyle(
-              fontSize: h * 0.02,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            FadeInDown(
-              child: Center(
-                child: Stack(
-                  alignment: Alignment.bottomRight,
+        body: Padding(
+          padding: const EdgeInsets.only(left: 20.0, top: 0, right: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: h * 0.02,
+              ),
+              FadeInDown(
+                child: Text(
+                  'Profile',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontWeight: FontWeight.w700),
+                ),
+              ),
+              SizedBox(
+                height: h * 0.02,
+              ),
+              FadeInLeft(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CircleAvatar(
-                      radius: h * 0.085,
+                      radius: h * 0.08,
                       backgroundImage: AssetImage(AppStyle.profile),
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(h * 0.012),
-                      child: Container(
-                        height: h * 0.032,
-                        width: h * 0.032,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Colors.black,
-                        ),
-                        child: Center(
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.edit,
-                              color: Colors.white,
-                              size: 18,
-                            ),
-                            onPressed: () {},
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'John Doe',
+                          style: TextStyle(
+                            fontSize: h * 0.02,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xff1F2A37),
                           ),
                         ),
-                      ),
-                    ),
+                        SizedBox(
+                          height: h * 0.01,
+                        ),
+                        Text(
+                          '+123 856479683',
+                          style: TextStyle(
+                            fontSize: h * 0.02,
+                            color: const Color(0xff1F2A37),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: h * 0.02,
-            ),
-            FadeInDown(
-              child: Text(
-                'John Doe',
-                style: TextStyle(
-                  fontSize: h * 0.02,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xff1F2A37),
-                ),
+              SizedBox(
+                height: h * 0.04,
               ),
-            ),
-            FadeInDown(
-              child: Text(
-                '+123 856479683',
-                style: TextStyle(
-                  fontSize: h * 0.02,
-                  color: const Color(0xff1F2A37),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: h * 0.02,
-            ),
-            FadeInUp(
-              duration: Duration(milliseconds: 1000),
-              child: ListView.builder(
-                itemCount: profile.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: w * 0.05),
-                    child: Column(
+              FadeInUp(
+                duration: Duration(milliseconds: 1000),
+                child: ListView.builder(
+                  itemCount: profile.length,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Column(
                       children: [
                         ListTile(
                           leading: Icon(profile[index].icon),
@@ -117,25 +99,25 @@ class _ProfileViewState extends State<ProfileView> {
                           thickness: 1,
                         ),
                       ],
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-            FadeInUp(
-              duration: Duration(milliseconds: 1000),
-              child: GestureDetector(
-                onTap: () {},
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: w * 0.06),
-                  child: ListTile(
-                    leading: Icon(Icons.logout),
-                    title: Text('Logout'),
+              FadeInUp(
+                duration: Duration(milliseconds: 1000),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: w * 0.01),
+                    child: ListTile(
+                      leading: Icon(Icons.logout),
+                      title: Text('Logout'),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -12,8 +12,8 @@ import '../widgets/medical_service.dart';
 import '../widgets/upcoming_appointments.dart';
 import '../widgets/user_info.dart';
 
-class HomeView extends StatefulWidget { 
-   const HomeView({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -23,45 +23,46 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
-      body: ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.blockSizeHorizontal! * 7,
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: SizeConfig.blockSizeHorizontal! * 7,
+                vertical: SizeConfig.blockSizeVertical! * 2,
+              ),
+              child: Column(
+                children: [
+                  // User Info Area .
+                  FadeInLeft(child: UserInfo()),
+                  // SearchMedical Area.
+                  FlipInY(
+                      duration: Duration(milliseconds: 500),
+                      delay: Duration(milliseconds: 1000),
+                      child: SearchMedical()),
+                  // Services Area .
+                  FadeInDown(child: Services()),
+                  // GetBestMedicalService
+                  FadeInRight(
+                      delay: Duration(milliseconds: 1100),
+                      child: GetBestMedicalService()),
+                ],
+              ),
             ),
-            child: Column(
-              children: [
-                // User Info Area .
-                FadeInLeft(child: UserInfo()),
-                // SearchMedical Area.
-                FlipInY(
-                    duration:  Duration(milliseconds: 500),
-                    delay:  Duration(milliseconds: 1000),
-                    child:  SearchMedical()),
-                // Services Area .
-                FadeInDown(child: Services()),
-                // GetBestMedicalService
-                FadeInRight(
-                    delay:  Duration(milliseconds: 1100),
-                    child:  GetBestMedicalService()),
-              ],
-            ),
-          ),
-          // Upcoming Appointments
-          FadeInUp(
-              delay:  Duration(milliseconds: 1300),
-              child:  UpcomingAppointments())
-        ],
+            // Upcoming Appointments
+            FadeInUp(
+                delay: Duration(milliseconds: 1300),
+                child: UpcomingAppointments())
+          ],
+        ),
       ),
     );
   }
 }
 
-
-
 class SearchMedical extends StatelessWidget {
-   const SearchMedical({super.key});
+  const SearchMedical({super.key});
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -80,7 +81,7 @@ class SearchMedical extends StatelessWidget {
             onPressed: () {},
             child: SvgPicture.asset(AppStyle.filtterIcon),
           ),
-          hintText: "Search medical..",
+          hintText: "Search Hospital, Doctor..",
           fillColor: AppStyle.inputFillColor,
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
@@ -93,7 +94,7 @@ class SearchMedical extends StatelessWidget {
 }
 
 class Services extends StatelessWidget {
-   const Services({super.key});
+  const Services({super.key});
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -107,7 +108,7 @@ class Services extends StatelessWidget {
               .titleMedium!
               .copyWith(fontWeight: FontWeight.w700, letterSpacing: 1),
         ),
-         SizedBox(height: 12),
+        SizedBox(height: 12),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: servicesList
