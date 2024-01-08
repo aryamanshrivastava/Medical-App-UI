@@ -34,7 +34,7 @@ Welcome to the Medical App UI, a cutting-edge application designed using Flutter
 **Dart:** The programming language used for Flutter development.
 
 ## License 📜
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/aryamanshrivastava/Medical-App-UI/blob/main/LICENSE) for more information.
 
 ## Contact 📫
 Aryaman Shrivastava - shrivastavaaryaman0702@gmail.com
